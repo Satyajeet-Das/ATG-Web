@@ -5,7 +5,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import Posts from "./components/Posts";
 
 function App() {
   return (

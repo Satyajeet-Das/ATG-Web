@@ -1,7 +1,5 @@
-import { useState } from "react";
 import Logo from "../assets/ATG_Logo.svg";
 import Down from "../assets/down.svg";
-import Search from "../assets/search.svg";
 import "../index.css";
 
 const MobileIcon = () => {
