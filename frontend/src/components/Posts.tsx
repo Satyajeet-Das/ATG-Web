@@ -6,7 +6,6 @@ import Calender from "../assets/calender.svg";
 import Location from "../assets/location.svg";
 import Bag from "../assets/bag.svg";
 import Write from "../assets/write.svg";
-import Down from "../assets/down.svg";
 import "../index.css";
 
 interface PostProps {
@@ -311,7 +310,12 @@ const Post: React.FC<PostProps> = ({
   );
 };
 
-const Posts = () => {
+interface PostsProps {
+    isJoined: boolean;
+    setIsJoined: (value:boolean) => void; 
+}
+
+const Posts : React.FC<PostsProps> = ({isJoined, setIsJoined}) => {
   return (
     <>
       <img
@@ -327,7 +331,7 @@ const Posts = () => {
       />
       <div className="container py-4">
         <div className="row d-flex justify-content-between py-4">
-        <Navbar />
+        <Navbar isJoined={isJoined} setIsJoined={setIsJoined}/>
           <div className="col-md-7 col-12 px-0">
             <Post
               image="https://s3-alpha-sig.figma.com/img/8f0b/5f52/59515bfc8d2d4ff8928be097376153e9?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QR4mwVxTFm805tpecMwddcnU4AKuPpqdknWiXmfp0jMg3qHcfYSJwi6zrJP7BEhCZ0Kf0VCdj~VLjjB7E5pTubxEPNeFK2fxi0v1RU556fvsstu~XWHeGB~0ywN1EftQPhT02ELp3TwpuMbmsrYxvT3b3BI6z1VTvYauVWjfIVVEJED1txhpxslPEbV58AmOOwtRUYZ-pvKzaVCHKFkQrGc-AfPbtnmTV1XeZXGIfs~DakN35NgJiBHRsdIofdjLg6IfYKyPSe5yN-gnHGis3Nkp8vA4xTw-Q59zdKfBNPsNYAylMbfjHGtzohiQeBtpUgY6gP4x5DYDU0knUeNUSA__"
@@ -358,7 +362,7 @@ const Posts = () => {
               justifyContent: "center",
             }}
           >
-            <Groups />
+            <Groups isJoined={isJoined}/>
           </div>
         </div>
       </div>

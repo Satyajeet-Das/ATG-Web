@@ -7,7 +7,7 @@ interface SignUpProps {
 }
 
 const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
-  const [isSignIn, setIsSignIn] = useState(true);
+  const [isSignIn, setIsSignIn] = useState(false);
 
   const toggleForm = () => setIsSignIn(!isSignIn);
 
@@ -202,18 +202,32 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                 >
                   {isSignIn ? "Sign In" : "Create Account"}
                 </button>
-                <button
-                  className="btn btn-outline-primary w-100 mb-2"
-                  style={{ fontSize: "14px" }}
-                >
-                  {isSignIn ? "Sign In" : "Sign Up"} with Facebook
-                </button>
-                <button
-                  className="btn btn-outline-danger w-100"
-                  style={{ fontSize: "14px" }}
-                >
-                  {isSignIn ? "Sign In" : "Sign Up"} with Google
-                </button>
+                <div className="py-2 rounded">
+                  <button
+                    className="px-3"
+                    style={{
+                      height: "36px",
+                      width: "100%",
+                      border: "1px solid #D9D9DB",
+                      backgroundColor: "white",
+                    }}
+                  >
+                    {isSignIn ? "Sign In" : "Sign Up"} with Facebook
+                  </button>
+                </div>
+                <div className="rounded">
+                  <button
+                    className="px-3"
+                    style={{
+                      height: "36px",
+                      width: "100%",
+                      border: "1px solid #D9D9DB",
+                      backgroundColor: "white",
+                    }}
+                  >
+                    {isSignIn ? "Sign In" : "Sign Up"} with Google
+                  </button>
+                </div>
                 {isSignIn && (
                   <div className="mt-3 text-center">
                     <a
@@ -276,7 +290,9 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
               fontWeight: "bold",
             }}
           >
-            <div className="py-3" style={{fontSize: "18px"}}>{isSignIn ? "Welcome Back" : "Create Account"}</div>
+            <div className="py-3" style={{ fontSize: "18px" }}>
+              {isSignIn ? "Welcome Back" : "Create Account"}
+            </div>
             <button
               onClick={() => setIsOpen(false)} // Close the modal
               style={{
@@ -292,7 +308,7 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
 
           {/* Mobile Form */}
           <div className="container py-3 px-4">
-            <div className="row" style={{paddingBottom: "50px"}}>
+            <div className="row" style={{ paddingBottom: "50px" }}>
               {/* Form */}
               <div className="col-12">
                 <div>
@@ -311,7 +327,7 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                 </div>
                 <div>
                   <input
-                    className={isSignIn ? "px-3 col-12 mb-3" :  " px-3 col-12"}
+                    className={isSignIn ? "px-3 col-12 mb-3" : " px-3 col-12"}
                     style={{
                       height: "46px",
                       width: "100%",
@@ -339,20 +355,22 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                     />
                   </div>
                 )}
-                <div className="row">
+                <div className="row mb-3">
                   <div className="col-8">
-
                     <button
-                      className="btn btn-primary w-100 mb-3 rounded-pill fw-semibold"
+                      className="btn btn-primary w-100 rounded-pill fw-semibold"
                       style={{ border: "none", width: "100%", height: "38px" }}
                     >
                       {isSignIn ? "Sign In" : "Create Account"}
                     </button>
                   </div>
-                  <div className="col-6">
-
+                  <div
+                    style={{ cursor: "pointer", textDecoration: "underline" }}
+                    className="d-flex col-4 align-items-center"
+                    onClick={() => setIsSignIn(!isSignIn)}
+                  >
+                    {!isSignIn ? "or, Sign In" : "or, Create Account"}
                   </div>
-
                 </div>
                 <button
                   className="btn btn-outline-primary w-100 mb-2"
@@ -366,20 +384,20 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                 >
                   {isSignIn ? "Sign In" : "Sign Up"} with Google
                 </button>
-                {isSignIn && (
-                  <div className="mt-3 text-center">
-                    <a
-                      href="#"
-                      style={{
-                        fontSize: "14px",
-                        textDecoration: "none",
-                        color: "black",
-                      }}
-                    >
-                      Forgot Password?
-                    </a>
-                  </div>
-                )}
+                <div className="mt-3 text-center">
+                  <a
+                    href="#"
+                    style={{
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    {isSignIn
+                      ? "Forgot Password?"
+                      : "By signing up, you agree to our Terms & conditions, Privacy policy"}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

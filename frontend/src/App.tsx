@@ -15,9 +15,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Layout>
-              <Posts/>
-            </Layout>
+            <Layout/>
           }
         />
         <Route path="*" element={<Navigate to="/" />} />
