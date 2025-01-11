@@ -1,0 +1,79 @@
+@media (max-width: 767px) {
+
+    .color-change {
+      background-color: #f8f9fa;
+    }
+}
+
+/* Change background color at the 'lg' breakpoint (992px and up) */
+@media (min-width: 768px) {
+  .color-change {
+    background-color: white;
+  }
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.title_position {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%), 
+                url('https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GmI0jqhoVLeJDr3CpcbU180fU6zCwRRcczOE6puo2B6xmHfZrOzdKMSgU9tK5RjzAIvtKds63AYrxBSpiIazU9Ip8E7uPijfhE7F5AWkl~2auA-zCKIrmeyOHcSTCmPaMmxjlOzkkDVwHc5-9F50c6u7D8cI8kp2qBjaGJAH4oNazLhhTn9fDiwxXurcOX99gRu91TnpmLxQgaw1QJfT0q4J76eZhQUF9PcTJUyt9PRdn9TRCbgSXlbqIV5kEuf4A-jI7MiTjZuuDe7H-D5-Ncn8L2WEYgzRAzIM9NVAXSgQ12xXpggpglXR8Jtgv6e~C8piT-FV5ocKHNm8KlFN0g__');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+@media (max-width: 767px) {
+    .title_position {
+        height: 360px;
+    }
+}
+
+@media (min-width: 768px) {
+    .title_position {
+        height: 440px;
+    }
+}
+
+.community_title {
+    position: absolute;
+    left: 17px;
+    bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    .community_title {
+        left: 200px;
+    }
+}
+
+/* Default height for smaller screens */
+.post_header {
+    height: 360px;
+    overflow: hidden;
+  }
+  
+  /* Override height for screens above 768px */
+  @media (min-width: 768px) {
+    .post_header {
+      height: 440px;
+    }
+  }
+
+  /* Default style: No border */
+.card-container {
+    border: none;
+  }
+  
+  /* Show border only on screens above 768px */
+  @media (min-width: 576px) {
+    .card-container {
+      border: 1px solid #e4e3e3;
+    }
+  }
+  
+  
+
+
