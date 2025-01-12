@@ -1,8 +1,14 @@
 import Back from "../assets/back.svg";
 import Join from "../assets/join.svg";
+import Leave from "../assets/leaveGroupMobile.svg";
 import "../index.css";
 
-const Hero = () => {
+interface HeroProps {
+  isJoined: boolean;
+  setIsJoined: (value: boolean) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ isJoined, setIsJoined }) => {
   return (
     <>
       <div className="post_header">
@@ -14,6 +20,7 @@ const Hero = () => {
               alt="Back"
             />
             <button
+              onClick={() => setIsJoined(!isJoined)}
               className="rounded d-flex align-items-center justify-center"
               style={{
                 position: "absolute",
@@ -25,13 +32,15 @@ const Hero = () => {
                 right: "15px",
               }}
             >
-              <img src={Join} alt="Join" />
+              {isJoined ? (
+                <img src={Join} alt="Join" />
+              ) : (
+                <img src={Leave} alt="Leave" />
+              )}
             </button>
           </div>
           <div className="relative">
-            <div
-              className="community_title"
-            >
+            <div className="community_title">
               <div className="text-white fw-bold fs-4">
                 Computer Engineering
               </div>

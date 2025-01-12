@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Google from "../assets/google.svg";
 import SignImage from "../assets/SignUp.svg";
 
 interface SignUpProps {
@@ -212,6 +213,11 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                       backgroundColor: "white",
                     }}
                   >
+                    <img
+                      style={{ height: "16px", marginRight: "5px" }}
+                      src="https://s3-alpha-sig.figma.com/img/2260/c71f/967377e16ffbb611ef03393e79e51f6e?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZtXmZG05CHp13bgW1VvwMiBUP0eHlUrBEptDo76nFGDanlxHGyZB8h4YeKkm2K2lItAG94~dsfYn0mLdMdEz5AxKRsPoOXMw6NjKJo9z-vsMQbTInzXV1lO7K1-burtsy1OPLaf5ssvNiBdfLj82zBuQkTMfM4wWDgrbZJVvqZBQ-szZXiS4XyIogVpCJptfRF0xCTpeNa5mTcxRs8qIMPqA21tvlP5oV8egnKPVnnjrqiSnfUrmKJMr8tpEE2J0ZqqBiMxVsida~dtxaCsHgljaBu9hEvPS5CDxM4KYW~LsCS1iyxhzzRV~D7glSF1GdtiStfDTVn9Y2Lc5TlXJGQ__"
+                      alt="facebook"
+                    />
                     {isSignIn ? "Sign In" : "Sign Up"} with Facebook
                   </button>
                 </div>
@@ -225,6 +231,11 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                       backgroundColor: "white",
                     }}
                   >
+                    <img
+                      style={{ height: "16px", marginRight: "5px" }}
+                      src={Google}
+                      alt="google"
+                    />
                     {isSignIn ? "Sign In" : "Sign Up"} with Google
                   </button>
                 </div>
@@ -312,6 +323,34 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
               {/* Form */}
               <div className="col-12">
                 <div>
+                  <div className="">
+                    <input
+                      className="px-3 col-6"
+                      style={{
+                        height: "46px",
+                        width: "50%",
+                        border: "1px solid #D9D9DB",
+                        color: "#8A8A8A",
+                        backgroundColor: "#f5f5f5",
+                      }}
+                      type="text"
+                      placeholder="First Name"
+                    />
+                    <input
+                      className="px-3 col-6"
+                      style={{
+                        height: "46px",
+                        width: "50%",
+                        border: "1px solid #D9D9DB",
+                        color: "#8A8A8A",
+                        backgroundColor: "#f5f5f5",
+                      }}
+                      type="text"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <div>
                   <input
                     className="px-3 col-12"
                     style={{
@@ -373,15 +412,35 @@ const SignUp: React.FC<SignUpProps> = ({ isOpen, setIsOpen }) => {
                   </div>
                 </div>
                 <button
-                  className="btn btn-outline-primary w-100 mb-2"
-                  style={{ fontSize: "14px" }}
+                  className="px-3 mb-2"
+                  style={{
+                    height: "36px",
+                    width: "100%",
+                    border: "1px solid #D9D9DB",
+                    backgroundColor: "white",
+                  }}
                 >
+                  <img
+                    style={{ height: "16px", marginRight: "5px" }}
+                    src="https://s3-alpha-sig.figma.com/img/2260/c71f/967377e16ffbb611ef03393e79e51f6e?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZtXmZG05CHp13bgW1VvwMiBUP0eHlUrBEptDo76nFGDanlxHGyZB8h4YeKkm2K2lItAG94~dsfYn0mLdMdEz5AxKRsPoOXMw6NjKJo9z-vsMQbTInzXV1lO7K1-burtsy1OPLaf5ssvNiBdfLj82zBuQkTMfM4wWDgrbZJVvqZBQ-szZXiS4XyIogVpCJptfRF0xCTpeNa5mTcxRs8qIMPqA21tvlP5oV8egnKPVnnjrqiSnfUrmKJMr8tpEE2J0ZqqBiMxVsida~dtxaCsHgljaBu9hEvPS5CDxM4KYW~LsCS1iyxhzzRV~D7glSF1GdtiStfDTVn9Y2Lc5TlXJGQ__"
+                    alt="facebook"
+                  />
                   {isSignIn ? "Sign In" : "Sign Up"} with Facebook
                 </button>
                 <button
-                  className="btn btn-outline-danger w-100"
-                  style={{ fontSize: "14px" }}
+                  className="px-3"
+                  style={{
+                    height: "36px",
+                    width: "100%",
+                    border: "1px solid #D9D9DB",
+                    backgroundColor: "white",
+                  }}
                 >
+                  <img
+                    style={{ height: "16px", marginRight: "5px" }}
+                    src={Google}
+                    alt="google"
+                  />
                   {isSignIn ? "Sign In" : "Sign Up"} with Google
                 </button>
                 <div className="mt-3 text-center">

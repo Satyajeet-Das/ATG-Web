@@ -12,7 +12,7 @@ const Layout = () => {
     return (
         <div className="">
             <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-            <Hero/>
+            <Hero isJoined={isJoined} setIsJoined={setIsJoined} />
             <SignUp isOpen={isOpen} setIsOpen={setIsOpen}/>
             <div className="">
                 <Posts isJoined={isJoined} setIsJoined={setIsJoined}/>
